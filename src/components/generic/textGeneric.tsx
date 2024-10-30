@@ -8,12 +8,12 @@ import Styles from "./styles";
     size:string
  }
 
-const TextGenric =({value,size,style}:TextInputProps)=>{
+const TextGeneric =({value,size,style}:TextInputProps)=>{
     return(
-    <Text style={[size=="m"?Styles.mediumText:size==="s"?Styles.smallText:Styles.largeText,style]}>
+    <Text style={[size=="m"?Styles.mediumText:size==="l"?Styles.largeText:Styles.smallText,style]}>
         {value}
     </Text>
     )
 }
 
-export default TextGenric;
+export default TextGeneric;
