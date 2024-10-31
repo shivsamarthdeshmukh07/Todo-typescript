@@ -2,7 +2,9 @@ import React, {useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import DateTimePicker from "react-native-modal-datetime-picker";
-import { widthScale } from "../assets/metric";
+import { widthScale } from "../../assets/metric";
+import Styles from "./style";
+import { Color } from "../../assets/constants/Color";
 
 type TimePickerProps={
     getDataFromChild:(text: string) => void;
@@ -35,10 +37,10 @@ const TimePicker =({getDataFromChild,time}:TimePickerProps)=>{
      }
     return(
               
-        <View style={{height:45,width:"50%",borderBottomWidth:1,paddingLeft:widthScale(10)}}>
+        <View style={Styles.timeContainer}>
             <TouchableOpacity onPress={()=>setIsVisible(!isVisible)}
                 style={{flex:1,justifyContent:"center"}}>
-                    <Text style={{color:"white"}}>{showTime}</Text>
+                    <Text style={{color:Color.white}}>{showTime}</Text>
                     </TouchableOpacity>
             <DateTimePicker
             mode="time"

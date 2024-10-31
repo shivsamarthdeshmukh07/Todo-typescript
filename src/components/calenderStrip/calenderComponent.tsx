@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { View } from "react-native";
 import CalendarStrip from "react-native-calendar-strip";
 import { fontScale, heightScale } from "../../assets/metric";
-import Styles from "../../screens/home/styles";
+
 import { Color } from "../../assets/constants/Color";
+import Styles from "./style";
 
 type CalenderComponentProps={
   
@@ -15,10 +16,10 @@ const CalenderComponent = ({setDate}:CalenderComponentProps)=>{
     
     return(
         <CalendarStrip
-        style={{marginTop:heightScale(15),height:75}}
+        style={Styles.CalenderContainer}
         calendarHeaderStyle={{height:heightScale(30),fontSize:fontScale(16),color:Color.purple}}
-        dateNameStyle={{fontSize:fontScale(12),color:"white"}}
-        dateNumberStyle={{fontSize:fontScale(16),color:"white"}}
+        dateNameStyle={{fontSize:fontScale(12),color:Color.white}}
+        dateNumberStyle={{fontSize:fontScale(16),color:Color.white}}
         onDateSelected={(text)=>setDate(new Date(text.toString()))}
         selectedDate={new Date()}
         iconLeftStyle={Styles.calenderLeftIcon}

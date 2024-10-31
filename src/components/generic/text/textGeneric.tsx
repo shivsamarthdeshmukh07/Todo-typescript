@@ -1,6 +1,7 @@
 import React, { Children } from "react";
 import { Text } from "react-native";
-import Styles from "./styles";
+import Styles from "../textInput/styles";
+
 
  type TextInputProps ={
     value : string,
@@ -10,7 +11,9 @@ import Styles from "./styles";
 
 const TextGeneric =({value,size,style}:TextInputProps)=>{
     return(
-    <Text style={[size=="m"?Styles.mediumText:size==="l"?Styles.largeText:Styles.smallText,style]}>
+    <Text style={[size=="m"?Styles.mediumText:size==="l"?Styles.largeText:Styles.smallText,style]}
+     numberOfLines={1}
+    >
         {value}
     </Text>
     )

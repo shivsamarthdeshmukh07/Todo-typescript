@@ -4,6 +4,7 @@ import React from "react";
 import Home from "../screens/home/Home";
 import { RootStackParamList } from "./type";
 import CreateTask from "../screens/createTask/createTask";
+import DisplayTodos from "../screens/displayTodos/DisplayTodos";
 
 const Routes = ()=>{
     const Stack = createNativeStackNavigator<RootStackParamList>()
@@ -12,6 +13,8 @@ const Routes = ()=>{
         <Stack.Navigator initialRouteName="Home">
             <Stack.Screen options={{headerShown:false}} name="Home" component={Home}/>
             <Stack.Screen options={{headerShown:false}} name="CreateTask" component={CreateTask}/>
+            <Stack.Screen options={{headerShown:false}} name="DisplayTodos" component={DisplayTodos}/>
+
 
         </Stack.Navigator>
       </NavigationContainer>
